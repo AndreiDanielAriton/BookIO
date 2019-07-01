@@ -24,15 +24,17 @@
                                        <span class="badge badge-info">{{$book->title}}</span>
                                     </div>
                                 </div>
-                                <div class="row justify-content-center">
-                                    <div class="col-2">
-                                        <a href="{{route('book.destroy',$book->id)}}">
-                                            <button type="button" class="btn btn-danger">
-                                                Delete
-                                            </button>
-                                        </a>
+                                @if(Auth::user()->id == $userId)
+                                    <div class="row justify-content-center">
+                                        <div class="col-2">
+                                            <a href="{{route('book.destroy',$book->id)}}">
+                                                <button type="button" class="btn btn-danger">
+                                                    Delete
+                                                </button>
+                                            </a>
+                                        </div>
                                     </div>
-                                </div>
+                                @endif
                             </div>
 
                     @endforeach
