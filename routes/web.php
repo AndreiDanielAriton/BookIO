@@ -18,3 +18,4 @@ Auth::routes();
 Route::get('/user/{user_id}', 'UsersController@index')->name('user.show');
 Route::get('/', 'SearchController@index')->name('search.show');
 Route::get('/search', 'SearchController@index')->name('search.show');
+Route::get('/book/delete/{id}','BookController@destroy')->name('book.destroy');
